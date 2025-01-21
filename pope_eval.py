@@ -110,16 +110,16 @@ for batch_id, data in tqdm(enumerate(pope_loader), total=len(pope_loader)):
         questions, kwargs = model_loader.prepare_inputs_for_model(
             template, query, image
         )
-        llama_modify(
-            model_loader.llm_model,
-            args.start_layer,
-            args.end_layer,
-            args.use_attn,
-            args.alpha,
-            args.use_cfg,
-            model_loader.img_start_idx,
-            model_loader.img_end_idx,
-        )
+        # llama_modify(
+        #     model_loader.llm_model,
+        #     args.start_layer,
+        #     args.end_layer,
+        #     args.use_attn,
+        #     args.alpha,
+        #     args.use_cfg,
+        #     model_loader.img_start_idx,
+        #     model_loader.img_end_idx,
+        # )
 
         logits_processor = (
             model_loader.init_cfg_processor(questions, args.gamma, args.beam, args.start_layer, args.end_layer)

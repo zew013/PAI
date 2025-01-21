@@ -15,8 +15,8 @@ from constants import (
 )
 from llava.mm_utils import get_model_name_from_path
 from llava.model.builder import load_pretrained_model
-from minigpt4.common.eval_utils import init_model
-from mllm.models import load_pretrained
+# from minigpt4.common.eval_utils import init_model
+# from mllm.models import load_pretrained
 
 
 def load_model_args_from_yaml(yaml_path):
@@ -69,7 +69,7 @@ class MiniGPT4Config:
 
 def load_model(model):
     if model == "llava-1.5":
-        model_path = os.path.expanduser("/path/to/llava-v1.5-7b")
+        model_path = os.path.expanduser("liuhaotian/llava-v1.5-7b")
         return load_llava_model(model_path)
 
     elif model == "minigpt4":
@@ -209,7 +209,7 @@ class ModelLoader:
 
     def load_model(self):
         if self.model_name == "llava-1.5":
-            model_path = os.path.expanduser("/path/to/models/llava-v1.5-7b")
+            model_path = os.path.expanduser("liuhaotian/llava-v1.5-7b")
             self.tokenizer, self.vlm_model, self.image_processor, self.llm_model = (
                 load_llava_model(model_path)
             )
